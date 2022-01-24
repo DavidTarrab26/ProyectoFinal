@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Nav from './componentes/Nav';
 
 function App() {
   return (
-    <h1>Hola</h1>
+    <>
+    <Nav />
+    </>
   );
 }
 
