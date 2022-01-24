@@ -1,6 +1,6 @@
 const Nav = () => {
     return ( 
-        <h1>esto va hacer el nav</h1>
+        <h1>oka</h1>
      );
 }
  
