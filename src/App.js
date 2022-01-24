@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Nav from './componentes/Nav';
+import Footer from './componentes/Footer/Footer';
+
 
 function App() {
   return (
     <>
-    <Nav />
+    <Footer/>
     </>
   );
 }
