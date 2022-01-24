@@ -1,8 +1,11 @@
 import './App.css';
+import Nav from './componentes/Nav';
 
 function App() {
   return (
-    <h1>Hola</h1>
+    <>
+    <Nav />
+    </>
   );
 }
 
