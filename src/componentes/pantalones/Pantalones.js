@@ -9,7 +9,7 @@ const Pantalones = () => {
         <div>
             {pantalones.length > 0 ?
                 <div className='container'>
-                    <h2 className='text-center mb-5'>OFERTAS!!</h2>
+                    <h2 className='text-center mb-5'>PANTALONES</h2>
                     <div className='d-flex justify-content-center'>
                         <div className='row'>
                             {pantalones.map((pantalon, index)=>(
