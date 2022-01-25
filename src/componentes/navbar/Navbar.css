@@ -19,3 +19,20 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
     margin: 5px;
 }
+
+.btn-login{
+    color: orange;
+}
+.login{
+    background-color: orange;
+    padding: 10px;
+}
+.btn-login{
+    color: orange;
+    background-color: black;
+    margin-left: 10px;
+}
+.btn-regis{
+    color: orange;
+    background-color: black;
+}
