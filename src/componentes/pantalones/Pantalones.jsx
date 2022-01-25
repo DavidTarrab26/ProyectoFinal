@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import {Context} from '../../../store/appContext'
-import './Cards.css'
-import foto1 from '../../../assets/img/photo-white-background/IMG-20210510-WA0047.png'
+import {Context} from '../../store/appContext'
+import './Pantalones.css'
+import foto1 from '../../assets/img/photo-white-background/IMG-20210510-WA0047.png'
 
-const Cards = () => {
+const Pantalones = () => {
     const {pantalones} = useContext(Context)
     return ( 
         <div>
@@ -15,7 +15,7 @@ const Cards = () => {
                             {pantalones.map((pantalon)=>(
                                 <div className='col-md-3 my-3'>
                                     <div className=''>
-                                        <img src={pantalon.img} className='fotosPantalon shadow'/>
+                                        <img src={foto1} className='fotosPantalon shadow'/>
                                         <div className='d-flex justify-content-between'>
                                             <div className='textoCards'>
                                                 <h6 className='mt-2'>{pantalon.texto}</h6>
@@ -38,4 +38,4 @@ const Cards = () => {
      );
 }
  
-export default Cards;
+export default Pantalones;

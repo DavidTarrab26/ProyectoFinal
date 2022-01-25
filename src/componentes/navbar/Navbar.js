@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 import foto from "../../assets/img/logEcomerce.png"
 import "./Navbar.css"
 const Navbar = () => {
@@ -13,14 +14,14 @@ const Navbar = () => {
       
     <div className="navbar-collapse">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li>
-          <button className='botonMenu btn '  to="#">HOME</button>
+      <li>
+        <Link to="/"><button className='botonMenu btn'>HOME</button></Link>
         </li>
         <li >
-          <button className='botonMenu btn'  to="#">PANTALONES</button>
+        <Link  to="/pantalones"><button className='botonMenu btn' >PANTALONES</button></Link> 
         </li>
         <li >
-          <button className='botonMenu btn'  to="#" > BERMUDAS </button>
+          <Link to="bermudas"><button className='botonMenu btn'> BERMUDAS </button></Link>
         </li>
       </ul>
         

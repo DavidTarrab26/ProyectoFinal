@@ -2,8 +2,11 @@ import './App.css';
 import Navbar from './componentes/navbar/Navbar';
 import Footer from './componentes/footer';
 import Home from './componentes/home/Home';
-//import Navbar from './componentes/navbar/Navbar';
 import UserProvaider from './store/appContext';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Pantalones from './componentes/pantalones/Pantalones';
+import Bermudas from './componentes/bermudas'
+import Admin from './componentes/admin/Admin';
 
 
 function App() {
@@ -11,9 +14,16 @@ function App() {
     <>
 
       <UserProvaider>
-        <Navbar/>
-        <Home />
-        <Footer/>
+        <Router>
+          <Navbar/>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/pantalones' element={<Pantalones />} />
+            <Route path='/bermudas' element={<Bermudas />} />
+            <Route path='/admin' element={<Admin />} />
+          </Routes>
+          <Footer/>
+        </Router>
       </UserProvaider>
 
     </>
