@@ -12,10 +12,11 @@ const Pantalones = () => {
                     <h2 className='text-center mb-5'>OFERTAS!!</h2>
                     <div className='d-flex justify-content-center'>
                         <div className='row'>
-                            {pantalones.map((pantalon)=>(
-                                <div className='col-md-3 my-3'>
+                            {pantalones.map((pantalon, index)=>(
+                                <div className='col-md-3 my-3' key={index}>
                                     <div className=''>
                                         <img src={foto1} className='fotosPantalon shadow'/>
+                                        <img src={pantalon.img} className='fotosPantalon shadow' alt="Imagen pantalon"/>
                                         <div className='d-flex justify-content-between'>
                                             <div className='textoCards'>
                                                 <h6 className='mt-2'>{pantalon.texto}</h6>

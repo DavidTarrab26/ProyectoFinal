@@ -1,1 +1,1 @@
-import { default } from "./Promocion"
+export { default } from './Promocion'
