@@ -21,7 +21,7 @@ const Navbar = () => {
         <Link  to="/pantalones"><button className='botonMenu btn' >PANTALONES</button></Link> 
         </li>
         <li >
-          <Link to="bermudas"><button className='botonMenu btn'> BERMUDAS </button></Link>
+          <Link to="/bermudas"><button className='botonMenu btn'> BERMUDAS </button></Link>
         </li>
       </ul>
         
@@ -29,6 +29,7 @@ const Navbar = () => {
         <input className="form-control me-2" type="search" placeholder="Busca tu producto" aria-label="Search"/>
         <button className="btn botonBuscar btn-dark" type="submit">BUSCAR</button>
       </form>
+      
     </div>
   </div>
 </nav>
