@@ -6,7 +6,7 @@ const Navbar = () => {
     
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container-fluid">
-      <img className='logoNav' src= {foto} alt= "logo"/>
+    <img className='logoNav' src= {foto} alt= "logo"/>
     
     
     
@@ -26,7 +26,7 @@ const Navbar = () => {
         
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Busca tu producto" aria-label="Search"/>
-        <button className="btn botonBuscar btn-dark" type="submit">buscar</button>
+        <button className="btn botonBuscar btn-dark" type="submit">BUSCAR</button>
       </form>
     </div>
   </div>

@@ -12,10 +12,8 @@ function App() {
   return (
     <>
 
-    <Navbar/>
-
       <UserProvaider>
-        
+        <Navbar/>
         <Home />
         <Footer/>
       </UserProvaider>

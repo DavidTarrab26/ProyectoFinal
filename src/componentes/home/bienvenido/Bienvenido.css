@@ -1,4 +1,10 @@
+
 .bienvenido{
-    font-size: 30px;
+    font-size: 700%;
     font-weight: bold;
+}
+
+.slogan{
+    font-style: italic;
+    font-size: 300%;
 }
