@@ -1,0 +1,16 @@
+.fotosPantalon{
+    height: 400px;
+    width: 300px;
+}
+.card{
+    width: 300px;
+}
+.precio{
+    color: red;
+}
+.textoCards{
+    margin-left: 10px;
+}
+.btnCards{
+    margin-right: 10px;
+}
