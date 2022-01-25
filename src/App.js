@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './componentes/navbar/Navbar';
 import Footer from './componentes/footer';
 import Home from './componentes/home/Home';
-import UserProvaider from './store/appContext';
+import AppProvider from './store/appContext';
 import Pantalones from './componentes/pantalones/Pantalones';
 import Bermudas from './componentes/bermudas'
 import Admin from './componentes/admin/Admin';
@@ -14,7 +14,7 @@ function App() {
   return (
     <>
 
-      <UserProvaider>
+      <AppProvider>
         <Router>
           <Navbar/>
           <Routes>
@@ -26,7 +26,7 @@ function App() {
           </Routes>
           <Footer/>
         </Router>
-      </UserProvaider>
+      </AppProvider>
 
     </>
   );
