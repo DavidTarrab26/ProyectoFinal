@@ -41,6 +41,7 @@ const AppProvider = ({children}) => {
     useEffect(() => {
         setProductos([...bermudas, ...pantalones])
     },[])
+    console.log(productos)
 
 
     return (
