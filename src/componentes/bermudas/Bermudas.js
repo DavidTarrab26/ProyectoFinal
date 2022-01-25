@@ -14,7 +14,7 @@ const Bermudas = () => {
                         <div className='row'>
                             {bermudas.map((bermuda, index)=>(
                                 <div className='col-md-3 my-3' key={index}>
-                                    <div className=''>
+                                    <div className='contenedorFoto'>
                                         <img src={bermuda1} className='fotosbermuda shadow'/>
                                         <div className='d-flex justify-content-between'>
                                             <div className='textoCards'>
