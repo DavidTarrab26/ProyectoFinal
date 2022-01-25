@@ -1,0 +1,21 @@
+li{
+
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.botonBuscar{
+    border-style: solid;
+    border-color: orange;
+    color: orange;
+    
+}
+.logoNav{
+    width: 100px;
+    
+}
+.botonMenu{
+    background-color: orange;
+    color: black;
+    margin: 5px;
+}

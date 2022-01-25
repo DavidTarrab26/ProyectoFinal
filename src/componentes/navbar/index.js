@@ -1,1 +1,1 @@
-import {dafault} from "./Navbar"
+export {default} from "./Navbar";
