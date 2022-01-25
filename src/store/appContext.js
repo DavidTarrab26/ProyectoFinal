@@ -41,11 +41,10 @@ const AppProvider = ({children}) => {
     useEffect(() => {
         setProductos([...bermudas, ...pantalones])
     },[])
-    console.log(productos)
 
 
     return (
-        <Context.Provider value={{pantalones, bermudas, productos}}>
+        <Context.Provider value={{pantalones, bermudas, productos, setProductos}}>
             {children}
         </Context.Provider>
     );

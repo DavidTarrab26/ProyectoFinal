@@ -1,8 +1,8 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './componentes/navbar/Navbar';
-import Footer from './componentes/footer';
+import Footer from './componentes/Footer';
 import Home from './componentes/home/Home';
-//import Navbar from './componentes/navbar/Navbar';
 import UserProvaider from './store/appContext';
 
 
@@ -11,9 +11,13 @@ function App() {
     <>
 
       <UserProvaider>
-        <Navbar/>
-        <Home />
-        <Footer/>
+        <Router>
+          <Navbar/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+          <Footer/>
+        </Router>
       </UserProvaider>
 
     </>
