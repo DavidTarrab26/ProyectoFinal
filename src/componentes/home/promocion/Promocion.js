@@ -14,6 +14,8 @@ const Promocion = () => {
     
 
     return ( 
+        <>
+        {ofertas.length > 0 ?
         <div className="container-fluid">
             <div className="d-flex text-center justify-content-center p-4">
                 <h2> OFERTAS </h2>
@@ -36,8 +38,13 @@ const Promocion = () => {
                </div>
                 ))}
             </div>
-
         </div>
+
+        :
+
+        ''
+        }
+        </>
      );
 }
  
