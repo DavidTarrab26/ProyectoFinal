@@ -29,9 +29,8 @@ const Pantalones = () => {
                                                 <h6 className='precio'>${pantalon.precio}</h6>
                                             </div>
                                             <div className='mt-3'>
-                                            <Link to={`/${pantalon.id}`}><button className='btn btn-dark btnCards p-2'>Ver mas</button></Link>
-                                            <button onClick={()=>agregarAlCarrito(pantalon, pantalon.precio)}>Agragar Al Carrito</button>
-                                            </div>
+                                            <Link to={`/${pantalon.id}`}><button className='verMas btn btn-dark btnCards p-2'>Ver mas</button></Link>
+                                             </div>
                                         </div>
                                     </div>
                                 </div>
