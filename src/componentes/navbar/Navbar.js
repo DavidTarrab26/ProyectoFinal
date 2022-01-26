@@ -1,10 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import foto from "../../assets/img/logEcomerce.png"
+import { Context } from '../../store/appContext';
 import "./Navbar.css"
 
 
 const Navbar = () => {
+  const {carrito} = useContext(Context)
     return ( 
    <>
    {/* navbar */} 
@@ -36,7 +39,7 @@ const Navbar = () => {
         <div className='login'>
           <Link to=""><button className='btn btn-regis'> Registrate </button></Link>
           <Link to=""><button className='btn btn-login'> Login </button></Link>
-          <Link to=""><i className="bi bi-cart4"></i> </Link>
+          <Link to="/carrito"><i className="bi bi-cart4"></i> <p>{carrito.length}</p> </Link>
           </div>
           
 </>

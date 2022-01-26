@@ -6,7 +6,7 @@ export const Context = createContext(null)
 
 const AppProvider = ({children}) => {
     const [productos, setProductos] = useState([])
-
+    const [carrito, setCarrito] = useState([])
     //Agrega a la lista de pantalones los pantalones
     //En cada componente poner un filter, segun el titulo
     useEffect (() => {
@@ -32,9 +32,15 @@ const AppProvider = ({children}) => {
         ])
     },[])
 
+    /* Funcion para agregar productos al carrito */
+    const agregarAlCarrito = (producto) =>{
+        setCarrito([producto, ...carrito])
+        console.log(carrito)
+    }
+
 
     return (
-        <Context.Provider value={{productos, setProductos}}>
+        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito}}>
             {children}
         </Context.Provider>
     );

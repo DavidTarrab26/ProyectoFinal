@@ -8,6 +8,7 @@ import Pantalones from './componentes/pantalones/Pantalones';
 import Bermudas from './componentes/bermudas'
 import Admin from './componentes/admin/Admin';
 import Detalle from './componentes/detalle';
+import Carrito from './componentes/carritos/Carrito';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path='/bermudas' element={<Bermudas />} />
             <Route path='/admin' element={<Admin />} />
             <Route path='/:id' element={<Detalle />} />
+            <Route path='/carrito' element={<Carrito />} />
           </Routes>
           <Footer/>
         </Router>
