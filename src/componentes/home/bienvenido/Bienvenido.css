@@ -8,3 +8,8 @@
     font-style: italic;
     font-size: 300%;
 }
+
+.borde{
+    border: 10px solid orange;
+    border-radius: 15px;
+}

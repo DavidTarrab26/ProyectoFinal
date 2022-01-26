@@ -8,7 +8,7 @@ const Carrito = () => {
     const eliminar = (id, preciomenos) =>{
         setCarrito(carrito.filter(carro=> carro.id != id))
         setPrecios(precios-preciomenos)
-    }
+
 
     return ( 
         <>
@@ -32,13 +32,13 @@ const Carrito = () => {
                     </div>
                 ))}
             </div>
-            <h6 className='text-center mt-4'>TOTAL: ${precios}</h6>
+            <h6 className='text-center mt-4 total'>TOTAL: ${precios}</h6>
             <div className='d-flex justify-content-center mt-2'>
-                <button className='btn btn-success'>Finalizar Compra</button>
+                <button className='btn btn-warning'>Finalizar Compra</button>
             </div>
         </div>
         :
-        <h2>Debe agregar elementos a su carrito</h2>
+        <h2 className='text-center p-5'>AGREGUE ELEMENTOS AL CARRITO</h2>
         
         }
         </>

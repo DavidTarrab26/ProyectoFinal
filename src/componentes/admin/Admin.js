@@ -1,5 +1,6 @@
 import './Admin.css'
 import { useState } from 'react'
+import PanelDeControl from './panelDeControl'
 
 const Admin = () => {
     const [ usuario, setUsuario ] = useState("admin")
@@ -14,6 +15,8 @@ const Admin = () => {
             setCuentaIngresada('true')
         }else{
             setCuentaIngresada('false')
+            setInputUsuario('')
+            setInputContrasenia('')
         }
     }
 
@@ -28,27 +31,29 @@ const Admin = () => {
                 </div>
                 <div className="mb-3 mx-3">
                     <label className="form-label">Contraseña</label>
-                    <input type="password" className="form-control" id="exampleInputPassword1" onChange={(e)=>setInputContrasenia(e.target.value)} />
+                    <input type="password" className="form-control" id="exampleInputPassword1" value={inputContrasenia}onChange={(e)=>setInputContrasenia(e.target.value)} />
                 </div>
-                <button className="btn btn-primary mx-3" onClick={(event)=>validacionAdmin(event)}>Submit</button>
+                <button className="btn btn-primary mx-3" onClick={(event)=>validacionAdmin(event)}>ENTRAR</button>
             </form>
             </div>
         :
         cuentaIngresada === 'true' ?
-        <p>panel de control</p>
+         <PanelDeControl />
         :
         <div className='altura d-flex justify-content-center'>
             <form className='formAdmin mt-5'>
                 <div className="mb-3 mx-3">
                     <label className="form-label">Usuario</label>
-                    <input type="text" className="form-control" id="exampleInputEmail1" onChange={(e)=>setInputUsuario(e.target.value)} />
+                    <input type="text" className="form-control" id="exampleInputEmail1"  onChange={(e)=>setInputUsuario(e.target.value)} />
                 </div>
                 <div className="mb-3 mx-3">
                     <label className="form-label">Contraseña</label>
-                    <input type="password" className="form-control" id="exampleInputPassword1" onChange={(e)=>setInputContrasenia(e.target.value)} />
+                    <input type="password" className="form-control" id="exampleInputPassword1"  onChange={(e)=>setInputContrasenia(e.target.value)} />
                 </div>
                 <button className="btn btn-primary mx-3" onClick={(event)=>validacionAdmin(event)}>Submit</button>
-                <p>Datos incorrectos</p>
+                <div className='text-center p-2 '>
+                    <h5>Datos incorrectos, por favor intente otra vez</h5>
+                </div>
             </form>
             </div>
         }
