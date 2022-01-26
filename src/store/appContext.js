@@ -6,15 +6,8 @@ export const Context = createContext(null)
 
 
 const AppProvider = ({children}) => {
-    const [productos, setProductos] = useState([])
-    const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem('carrito')) ??[])
-    const [precios, setPrecios] = useState(0)
-    console.log(precios)
-    //Agrega a la lista de pantalones los pantalones
-    //En cada componente poner un filter, segun el titulo
-    useEffect (() => {
-        setProductos([
-            {id: "1", img: "panta2.png", alt: "Jogger azul", categoria: "Jogger", texto: "Jogger azul", enStock: true, precio: 2500, promocion: true, talles:["S", "L", "M"], verfoto: false},
+    const [productos, setProductos] = useState([
+        {id: "1", img: "panta2.png", alt: "Jogger azul", categoria: "Jogger", texto: "Jogger azul", enStock: true, precio: 2500, promocion: true, talles:["S", "L", "M"], verfoto: false},
             {id: "2", img: "panta8.png", alt: "Jogger estilo militar gris", categoria: "Jogger", texto: "Jogger estilo militar gris", enStock: true, precio: 2500, promocion: false, talles: ["S", "M", "L"], verfoto: false},
             {id: "3", img: "panta1.png", alt: "Jogger beige con bolsillo", categoria: "Jogger", texto: "Jogger beige con bolsillo", enStock: true, precio: 2500, promocion: false, talles: ["S", "M", "L"], verfoto: false},
             {id: "4", img: "panta14.png", alt: "Jogger gris plata", categoria: "Jogger", texto: "Jogger gris plata", enStock: true, precio: 2500, promocion: false, talles: ["S", "M", "L"], verfoto: false},
@@ -31,8 +24,11 @@ const AppProvider = ({children}) => {
             {id: "16", img: "short4.png", alt: "Bermuda jogger azul", categoria: "Bermuda", texto: "Bermuda jogger azul", enStock: true, precio: 2300, promocion: true, talles: ["S", "M", "L"], verfoto: false},
             {id: "17", img: "short3.png", alt: "Bermuda amarilla Hawaiana", categoria: "Bermuda", texto: "Bermuda amarilla Hawaiana", enStock: true, precio: 2300, promocion: false, talles: ["S", "M", "L"], verfoto: false},
             {id: "18", img: "short2.png", alt: "Bermuda marron con bolsillo", categoria: "Bermuda", texto: "Bermuda marron con bolsillo", enStock: true, precio: 2300, promocion: false, talles: ["S", "M", "L"], verfoto: false}
-        ])
-    },[])
+    ])
+    const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem('carrito')) ??[])
+    const [precios, setPrecios] = useState(0)
+    //Agrega a la lista de pantalones los pantalones
+    //En cada componente poner un filter, segun el titulo
 
     useEffect(()=>{
         localStorage.setItem('carrito', JSON.stringify(carrito))

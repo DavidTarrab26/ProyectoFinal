@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './componentes/navbar/Navbar';
-import Footer from './componentes/Footer';
+import Footer from './componentes/footer';
 import Home from './componentes/home';
 import AppProvider from './store/appContext';
 import Pantalones from './componentes/pantalones/Pantalones';
@@ -26,10 +26,10 @@ function App() {
             <Route path='/pantalones' element={<Pantalones />} />
             <Route path='/bermudas' element={<Bermudas />} />
             <Route path='/admin' element={<Admin />} />
-            <Route path='/:id' element={<Detalle />} />
             <Route path='/registrarse' element={<Registrarse/>} />
             <Route path='/login' element={<Login/>} />
             <Route path='/carrito' element={<Carrito />} />
+            <Route path='/:id' element={<Detalle />} />
           </Routes>
           <Footer/>
         </Router>
