@@ -1,0 +1,11 @@
+.contenedorDetalle{
+    height: 700px;
+}
+.fotosPantalonDetalle{
+    margin-top: 5%;
+    height: 80% ;
+}
+.textoDetalle{
+    margin-top: 10%;
+    margin-left: 50px;
+}
