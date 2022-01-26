@@ -9,8 +9,8 @@ const Detalle = () => {
 
     //Si encuntra un producto con ese id lo devuelve
    useEffect(()=>{
-    setProdADetallar(productos.find((produc) => produc.id === id))
-    },[])
+        setProdADetallar(productos.find((produc) => produc.id === id))
+   },[])
 
     return (
         <>

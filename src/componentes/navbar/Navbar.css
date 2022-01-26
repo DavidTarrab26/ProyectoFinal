@@ -26,6 +26,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 .login{
     background-color: orange;
     padding: 10px;
+    align-items: center;
 }
 .btn-login{
     color: orange;
@@ -35,4 +36,11 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 .btn-regis{
     color: orange;
     background-color: black;
+}
+.bi-cart4{
+    color: black;
+    font-size: 30px;
+    margin-left: 20px;
+    
+   
 }

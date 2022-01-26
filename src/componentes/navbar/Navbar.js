@@ -36,11 +36,13 @@ const Navbar = () => {
       </div>
     </nav>
     {/* login */}
+
         <div className='login'>
-          <Link to=""><button className='btn btn-regis'> Registrate </button></Link>
-          <Link to=""><button className='btn btn-login'> Login </button></Link>
+          <Link to="/Registrarse"><button className='btn btn-regis'> Registrate </button></Link>
+          <Link to="/Login"><button className='btn btn-login'> Login </button></Link>
           <Link to="/carrito"><i className="bi bi-cart4"></i> <p>{carrito.length}</p> </Link>
           </div>
+
           
 </>
      );
