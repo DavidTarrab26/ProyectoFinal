@@ -48,7 +48,7 @@ const Home = () => {
             </div>
              {/* sguinos en nuestras redes con sus logos */}
              <div className='d-flex justify-content-center container mt-5'>
-                <h5 className='seguinos mt-2'>follow us</h5>
+                <h5 className='seguinos mt-2'>Follow us</h5>
                 <div>
                     <img src={ig} alt="logo instagram" className='logo' />
                     <img src={fb} alt="logo de facebook" className='logo' />

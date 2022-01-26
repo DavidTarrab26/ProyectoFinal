@@ -7,7 +7,9 @@ const PanelDeControl = () => {
     const { productos, setProductos } = useContext(Context);
     const [ agregarProd, setAgregarProd ] = useState(false)
     const [newPrecio, setNewPrecio ] = useState(0)
+    const [newCosto, setNewCosto ] = useState(0)
     const [cambPrecio, setCambPrecio] = useState(false)
+    const [cambCosto, setCambCosto] = useState(false)
     const [ mostrar, setMostrar ] = useState(false)
 
     {/*{id: "1", img: "panta1.png", alt: "Jogger azul", categoria: "Jogger", texto: "Jogger azul", enStock: true, precio: 2500, costo: 1900, promocion: true, talles:["S", "L", "M"], verfoto: false} */}
@@ -63,6 +65,15 @@ const PanelDeControl = () => {
             producto.precio = newPrecio;
         }
         console.log(producto.precio)
+    }
+
+    const cambiarCosto = (e, producto) => {
+        e.preventDefault()
+        setCambCosto(true)
+        if (setNewCosto > 0) {
+            producto.costo = newCosto;
+        }
+        console.log(producto.costo)
     }
 
     const terminarCambio =() => {
@@ -163,6 +174,21 @@ const PanelDeControl = () => {
                                         ''
                                         }
                                     </div>
+
+                                    <div>
+                                        <button className="btn btn-warning mt-2" onClick={() => cambiarCosto(producto)}>CAMBIAR COSTO</button>
+                                        {cambCosto ?
+                                        <div>
+                                            <div className="row m-3">
+                                                <input type="number" className="form-control" placeholder="Nuevo Costo" onChange={(e)=>setNewCosto(e.target.value)}/>
+                                            </div>
+                                            <button className="btn btn-warning mt-2" onClick={() => terminarCambio()}>Listo</button>
+                                        </div>
+                                        :
+                                        ''
+                                        }
+                                    </div>
+
                                     {/*Elimina ese producto de la lista */}
                                     <div>
                                         <button className="btn btn-danger mt-2" onClick={() => eliminar(producto.id)}>ELIMINAR</button>

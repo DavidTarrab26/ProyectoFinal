@@ -2,15 +2,23 @@
     height: 400px;
     width: 300px;
 }
+
 .contentCardCarrito{
     width: 300px;
 }
+
 .precio{
     color: red;
 }
+
 .textoCards{
     margin-left: 10px;
 }
+
 .btnCards{
     margin-right: 10px;
+}
+
+.total{
+    font-size: 30px;
 }

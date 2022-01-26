@@ -3,7 +3,7 @@ import "./Registrarse.css"
 
 const Registrarse = () => {
     return ( 
-    <div className='formRegis d-flex justify-content-center'>
+    <div className='formRegis d-flex justify-content-center mt-4'>
         <div className='row container shadow formMapa'>
                 <div className='col-6'>
                          <h4 className='mt-2'>REGISTRATE PARA COMPRAR EN NUESTRA APP</h4>

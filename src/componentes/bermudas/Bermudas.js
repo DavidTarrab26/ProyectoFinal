@@ -16,7 +16,7 @@ const Bermudas = () => {
         <div>
             {bermudas.length > 0 ?
                 <div className='container'>
-                    <h2 className='text-center mb-5'>BERMUDAS</h2>
+                    <h2 className='text-center mb-5 mt-3 txt'>BERMUDAS</h2>
                     <div className='d-flex justify-content-center'>
                         <div className='row'>
                             {bermudas.map((bermuda, index)=>(
