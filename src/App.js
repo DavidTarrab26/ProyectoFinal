@@ -29,13 +29,7 @@ function App() {
             <Route path='/:id' element={<Detalle />} />
             <Route path='/registrarse' element={<Registrarse/>} />
             <Route path='/login' element={<Login/>} />
-<<<<<<< HEAD
-
             <Route path='/carrito' element={<Carrito />} />
-
-=======
-            <Route path='/carrito' element={<Carrito />} />
->>>>>>> 536e73e633edf87abe71977b8fd44bc243bb4f47
           </Routes>
           <Footer/>
         </Router>
