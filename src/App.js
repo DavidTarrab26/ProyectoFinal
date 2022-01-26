@@ -26,10 +26,10 @@ function App() {
             <Route path='/pantalones' element={<Pantalones />} />
             <Route path='/bermudas' element={<Bermudas />} />
             <Route path='/admin' element={<Admin />} />
-            <Route path='/:id' element={<Detalle />} />
             <Route path='/registrarse' element={<Registrarse/>} />
             <Route path='/login' element={<Login/>} />
             <Route path='/carrito' element={<Carrito />} />
+            <Route path='/:id' element={<Detalle />} />
           </Routes>
           <Footer/>
         </Router>
