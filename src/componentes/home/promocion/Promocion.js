@@ -1,14 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../../../store/appContext";
+import { Link } from "react-router-dom"
 
 const Promocion = () => {
-    const { productos } = useContext(Context)
+    const { productos, setProductos } = useContext(Context)
     const [ ofertas, setOfertas ] = useState([])
 
+
     useEffect (() => {
+        setProductos(productos)
         setOfertas(productos.filter((produc) => produc.promocion))
     },[])
-    console.log(ofertas)
     
 
     
@@ -31,8 +33,8 @@ const Promocion = () => {
                                <h6 className='precio'>${oferta.precio}</h6>
                            </div>
                            <div className='mt-3'>
-                               <button className='btn btn-dark btnCards'>Ver mas</button>
-                           </div>
+                                <Link to={`/${oferta.id}`}><button className='btn btn-dark btnCards'>Ver mas</button></Link>
+                            </div>
                        </div>
                    </div>
                </div>
