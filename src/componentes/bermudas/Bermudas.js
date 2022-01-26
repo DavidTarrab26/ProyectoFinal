@@ -1,10 +1,17 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../store/appContext';
-import bermuda1 from '../../assets/img/shorts-white-background/IMG-20211008-WA0002.png'
 import './Bermudas.css'
+import { Link } from 'react-router-dom'
 
 const Bermudas = () => {
-    const {bermudas} = useContext(Context) 
+    const {productos, agregarAlCarrito} = useContext(Context)
+    const [ bermudas, setBermudas ] = useState([]) 
+
+    useEffect (() => {
+        setBermudas(productos.filter((produc) => produc.categoria === "Bermuda"))
+    },[productos])
+
+    
     return ( 
         <div>
             {bermudas.length > 0 ?
@@ -14,15 +21,17 @@ const Bermudas = () => {
                         <div className='row'>
                             {bermudas.map((bermuda, index)=>(
                                 <div className='col-md-3 my-3' key={index}>
-                                    <div className='contenedorFoto'>
-                                        <img src={bermuda1} className='fotosbermuda shadow'/>
-                                        <div className='d-flex justify-content-between'>
-                                            <div className='textoCards'>
-                                                <h6 className='mt-2'>{bermuda.texto}</h6>
-                                                <h6 className='precio'>${bermuda.precio}</h6>
-                                            </div>
-                                            <div className='mt-3'>
-                                                <button className='btn btn-dark btnCards'>Ver mas</button>
+                                    <div className=''>
+                                        <img src={require(`../../assets/img/photo-white-background/${bermuda.img}`)} className='fotosPantalon shadow' alt="Imagen pantalon"/>
+                                        <div className='contenedorFoto'>
+                                            <div className='d-flex justify-content-between'>
+                                                <div className='textoCards'>
+                                                    <h6 className='mt-2'>{bermuda.texto}</h6>
+                                                    <h6 className='precio'>${bermuda.precio}</h6>
+                                                </div>
+                                                <div className='mt-3'>
+                                                <Link to={`/${bermuda.id}`}><button className='btn btn-dark btnCards' onClick={()=>agregarAlCarrito({...bermuda})}>Ver mas</button></Link>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
