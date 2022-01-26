@@ -46,7 +46,7 @@ const AppProvider = ({children}) => {
 
 
     return (
-        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito}}>
+        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito, precios}}>
             {children}
         </Context.Provider>
     );

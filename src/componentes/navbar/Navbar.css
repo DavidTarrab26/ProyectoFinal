@@ -25,7 +25,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .login{
     background-color: orange;
-    padding: 10px;
+    padding-right: 10px;
     align-items: center;
 }
 .btn-login{
@@ -41,6 +41,9 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
     font-size: 30px;
     margin-left: 20px;
-    
-   
+}
+.carritoLength{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 7px;
 }

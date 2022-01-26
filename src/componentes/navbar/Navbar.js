@@ -35,13 +35,22 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+
     {/* login */}
 
-        <div className='login'>
-          <Link to="/Registrarse"><button className='btn btn-regis'> Registrate </button></Link>
-          <Link to="/Login"><button className='btn btn-login'> Login </button></Link>
-          <Link to="/carrito"><i className="bi bi-cart4"></i> <p>{carrito.length}</p> </Link>
-          </div>
+    <div className='login d-flex justify-content-end'>
+      <Link to="/Registrarse"><button className='btn btn-regis'> Registrate </button></Link>
+      <Link to="/Login"><button className='btn btn-login'> Login </button></Link>
+      {carrito.length > 0 ?
+        <div className='d-flex'>
+          <Link to="/carrito"><i className="bi bi-cart4"></i></Link> 
+          <p className='carritoLength'>{carrito.length}</p>
+        </div>
+      :
+      <Link to="/carrito"><i className="bi bi-cart4"></i></Link>
+      }
+        
+    </div>
 
           
 </>
