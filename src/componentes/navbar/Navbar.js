@@ -36,19 +36,13 @@ const Navbar = () => {
       </div>
     </nav>
     {/* login */}
-<<<<<<< HEAD
-        <div className='login d-flex'>
-            <Link to="/Registrarse"><button className='btn btn-regis'> Registrate </button></Link>
-            <Link to="Login"><button className='btn btn-login'> Login </button></Link>
-            <Link to=""><i className="bi bi-cart4"></i> </Link>
-        </div>
-=======
+
         <div className='login'>
-          <Link to=""><button className='btn btn-regis'> Registrate </button></Link>
-          <Link to=""><button className='btn btn-login'> Login </button></Link>
+          <Link to="/Registrarse"><button className='btn btn-regis'> Registrate </button></Link>
+          <Link to="/Login"><button className='btn btn-login'> Login </button></Link>
           <Link to="/carrito"><i className="bi bi-cart4"></i> <p>{carrito.length}</p> </Link>
           </div>
->>>>>>> 24ae192337a7c8ac31681fa0d9c2cc0bb64cf281
+
           
 </>
      );
