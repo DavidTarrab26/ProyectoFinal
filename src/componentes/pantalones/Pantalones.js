@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import {Context} from '../../store/appContext'
 import './Pantalones.css'
-import foto1 from '../../assets/img/photo-white-background/IMG-20210510-WA0047.png'
 import { Link } from 'react-router-dom'
 
 const Pantalones = () => {
@@ -9,7 +8,7 @@ const Pantalones = () => {
     const [ pantalones, setPantalones ] = useState([]) 
 
     useEffect (() => {
-        setPantalones(productos.filter((produc) => produc.categoria === "Jogger"))
+        setPantalones(productos.filter(produc => produc.categoria === "Jogger"))
     },[productos])
 
     
@@ -23,7 +22,7 @@ const Pantalones = () => {
                             {pantalones.map((pantalon, index)=>(
                                 <div className='col-md-3 my-3' key={index}>
                                     <div className=''>
-                                        <img src={pantalon.img} className='fotosPantalon shadow' alt="Imagen pantalon"/>
+                                        <img src={require(`../../assets/img/photo-white-background/${pantalon.img}`)} className='fotosPantalon shadow' alt="Imagen pantalon"/>
                                         <div className='d-flex justify-content-between'>
                                             <div className='textoCards'>
                                                 <h6 className='mt-2'>{pantalon.texto}</h6>

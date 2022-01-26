@@ -21,19 +21,17 @@ const Bermudas = () => {
                         <div className='row'>
                             {bermudas.map((bermuda, index)=>(
                                 <div className='col-md-3 my-3' key={index}>
-
                                     <div className=''>
-                                        <img src={require(`${bermuda.img}`)} className='fotosPantalon shadow' alt="Imagen pantalon"/>
-
-                                    <div className='contenedorFoto'>
-
-                                        <div className='d-flex justify-content-between'>
-                                            <div className='textoCards'>
-                                                <h6 className='mt-2'>{bermuda.texto}</h6>
-                                                <h6 className='precio'>${bermuda.precio}</h6>
-                                            </div>
-                                            <div className='mt-3'>
-                                            <Link to={`/${bermuda.id}`}><button className='btn btn-dark btnCards'>Ver mas</button></Link>
+                                        <img src={require(`../../assets/img/shorts-white-background/${bermuda.img}`)} className='fotosPantalon shadow' alt="Imagen pantalon"/>
+                                        <div className='contenedorFoto'>
+                                            <div className='d-flex justify-content-between'>
+                                                <div className='textoCards'>
+                                                    <h6 className='mt-2'>{bermuda.texto}</h6>
+                                                    <h6 className='precio'>${bermuda.precio}</h6>
+                                                </div>
+                                                <div className='mt-3'>
+                                                <Link to={`/${bermuda.id}`}><button className='btn btn-dark btnCards'>Ver mas</button></Link>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

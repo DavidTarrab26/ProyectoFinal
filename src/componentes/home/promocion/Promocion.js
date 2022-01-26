@@ -9,7 +9,7 @@ const Promocion = () => {
 
     useEffect (() => {
         setOfertas(productos.filter((produc) => produc.promocion))
-    },[productos])
+    },[])
     console.log(ofertas)
     
 
@@ -24,7 +24,7 @@ const Promocion = () => {
                 {ofertas.map((oferta, index) => (
                 <div className='col-md-3 my-3' key={index}>
                    <div className=''>
-                       <img src={oferta.img} className='fotosPantalon shadow' alt="Imagen pantalon"/>
+                       <img src={require(`../../../assets/img/shorts-white-background/${oferta.img}`)} className='fotosPantalon shadow' alt="Imagen pantalon"/>
                        <div className='d-flex justify-content-between'>
                            <div className='textoCards'>
                                <h6 className='mt-2'>{oferta.texto}</h6>
