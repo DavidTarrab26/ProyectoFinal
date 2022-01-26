@@ -7,7 +7,7 @@ const Footer = () => {
     return ( 
         <>
             {/* sguinos en nuestras redes con sus logos */}
-            <div className='d-flex justify-content-between'>
+            <div className='d-flex justify-content-between container'>
                 <h5 className='seguinos mt-2'>Seguinos en nuestras redes!!</h5>
                 <div>
                     <img src={ig} alt="logo instagram" className='logo' />
