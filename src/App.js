@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './componentes/navbar/Navbar';
-import Footer from './componentes/footer';
-import Home from './componentes/home/Home';
+import Footer from './componentes/Footer';
+import Home from './componentes/home';
 import AppProvider from './store/appContext';
 import Pantalones from './componentes/pantalones/Pantalones';
 import Bermudas from './componentes/bermudas'

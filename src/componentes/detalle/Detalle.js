@@ -5,16 +5,19 @@ import { useParams } from 'react-router-dom';
 const Detalle = () => {
     const { id } = useParams();
     const {productos} = useContext(Context)
-    const [ prodADetallar, setProdADetallar] = useState({});
+    const [ prodADetallar, setProdADetallar] = useState([]);
 
     //Si encuntra un producto con ese id lo devuelve
    useEffect(()=>{
     setProdADetallar(productos.find((produc) => produc.id === id))
-   },[])
+    },[])
 
     return (
         <>
-            {/*<h1>{prodADetallar.texto}</h1>*/}
+            
+            <h1>{prodADetallar.texto}</h1>
+            
+            
         </>
     );
 }
