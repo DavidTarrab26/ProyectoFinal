@@ -12,7 +12,7 @@ const Home = () => {
             <Bienvenido />
             <Promocion />
             {/* FORM */}
-            <div className='d-flex justify-content-center'>
+            <div className='d-flex justify-content-center m-5'>
                 <div className='row container shadow formMapa'>
                     <div className='col-6'>
                     <h4 className='mt-2'>Contactenos</h4>

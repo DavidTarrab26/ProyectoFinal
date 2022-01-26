@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../../../store/appContext";
+import './Promocion.css'
 import { Link } from "react-router-dom"
 
 const Promocion = () => {
@@ -19,8 +20,8 @@ const Promocion = () => {
         <>
         {ofertas.length > 0 ?
         <div className="container-fluid">
-            <div className="d-flex text-center justify-content-center p-4">
-                <h2> OFERTAS </h2>
+            <div className="d-flex text-center justify-content-center p-4 border'bot">
+                <h2 className="txt-prin"> OFERTAS </h2>
             </div>
             <div className="row">
                 {ofertas.map((oferta, index) => (

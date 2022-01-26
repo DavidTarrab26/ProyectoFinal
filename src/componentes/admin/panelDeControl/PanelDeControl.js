@@ -1,9 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Context } from '../../../store/appContext'
 import CardsAdmin from "./cardsAdmin";
 
 
 const PanelDeControl = () => {
+
+
+
     const { productos, setProductos } = useContext(Context);
     const [ agregarProd, setAgregarProd ] = useState(false)
     const [newPrecio, setNewPrecio ] = useState(0)
@@ -21,21 +24,20 @@ const PanelDeControl = () => {
     const [texto, setTexto] = useState('')
     const [enStock, setEnStock] = useState(false)
     const [precio, setPrecio] = useState('')
-    const [costo, setCosto] = useState('')
     const [promocion, setPromocion] = useState(false)
     const [talles, setTalles] = useState([])
     const [verFoto, setVerFoto] = useState(false)
 
-    const agregarProducto = (aidi, imagen, categoria, texto, enStock, precio, costo, promocion, talles, verFoto) => {
-        setNewProducto({id: aidi, img: imagen, categoria: categoria, texto: texto, enStock: enStock, precio: precio, costo: costo, promocion: promocion, talles: talles, verFoto: verFoto})
-        if (enStock === "true" ) {
+    const agregarProducto = (aidi  /* imagen, categoria, texto, enStock, precio, promocion, talles, verFoto */) => {
+        setNewProducto({'id': aidi})
+        /* if (enStock === "true" ) {
             setEnStock(true)
         } if (promocion === "true") {
             setPromocion(true)
         } if (verFoto === "true") {
             setVerFoto(true)
-        }
-        setProductos([newProducto, ...productos]);
+        } */
+        setProductos([...productos, newProducto]);
         setAgregarProd(true)
     }
 
@@ -47,38 +49,22 @@ const PanelDeControl = () => {
         setProductos(productos.filter((produc) =>produc.id != id))
     }
 
-    /*const verImagen = (id) => {
-    }*/
-
-    const verImagen = () => {
-        setMostrar(true)
-    }
-
-    const quitarImagen = () => {
-        setMostrar(false)
-    }
-
-    const cambiarPrecio = (e, producto) => {
-        e.preventDefault()
+    const cambiarPrecio = () => {
+        /* e.preventDefault() */
         setCambPrecio(true)
-        if (setNewPrecio > 0) {
-            producto.precio = newPrecio;
-        }
-        console.log(producto.precio)
+        
     }
+    console.log(productos)
 
-    const cambiarCosto = (e, producto) => {
-        e.preventDefault()
-        setCambCosto(true)
-        if (setNewCosto > 0) {
-            producto.costo = newCosto;
-        }
-        console.log(producto.costo)
-    }
-
-    const terminarCambio =() => {
+    const terminarCambio =(producto) => {
+        let prod = productos.find(pro => pro.id == producto.id)   
         setCambPrecio(false)
+        if (newPrecio > 0) {
+            prod.precio = newPrecio;
+            setProductos(productos)
+        }
     }
+    
     
     return (
         <>
@@ -87,7 +73,7 @@ const PanelDeControl = () => {
             </div>
             <div className="m-4">
                 {!agregarProd ?
-                 <button className="btn btn-warning p-2" onClick={() => agregarProducto(aidi, imagen, categoria, texto, enStock, precio, costo, promocion, talles, verFoto)}>AGREGAR PRODUCTO</button>
+                 <button className="btn btn-warning p-2" onClick={() => agregarProducto(aidi, imagen, categoria, texto, enStock, precio, promocion, talles, verFoto)}>AGREGAR PRODUCTO</button>
 
                  :
                 <>
@@ -116,9 +102,6 @@ const PanelDeControl = () => {
                                 <input type="text" className="form-control" placeholder="Precio" aria-label="Precio" onChange={(e)=>setPrecio(e.target.value)} style={{width: "300px"}}/>
                             </div>
                             <div className="col">
-                                <input type="text" className="form-control" placeholder="Costo" aria-label="Costo" onChange={(e)=>setCosto(e.target.value)} style={{width: "300px"}}/>
-                            </div>
-                            <div className="col">
                                 <input type="text" className="form-control" placeholder="Promocion (Inserte true o false)" aria-label="Promocion" onChange={(e)=>setPromocion(e.target.value)} style={{width: "300px"}}/>
                             </div>
                             <div className="col">
@@ -145,44 +128,17 @@ const PanelDeControl = () => {
                     <h2 className='text-center mb-5'>PRODUCTOS</h2>
                     <div className='d-flex justify-content-center '>
                         <div className='row'>
-                        {productos.map((producto)=>(
-                                <CardsAdmin key={producto.id} {...producto}>
-                                    {/*Muestra la imagen de la card */}
-                                    <div>
-                                        {!mostrar ?
-                                            <div className="d-flex align-items-end">
-                                                <button className="btn btn-primary"  onClick={() => verImagen(producto.id)}>VER IMAGEN</button>
-                                            </div>
-                                        :
-                                        <div className="" style={{ display: producto.verfoto ? "block" : "none"}}>
-                                            <img  src={require(`../../../assets/img/photo-white-background/${producto.img}`)} className='fotosPantalon shadow' alt="Imagen producto"/>
-                                            <button className="btn btn-primary" onClick={() => quitarImagen()}>Ocultar</button>
-                                        </div>
-                                        }
-                                    </div>
+                        {productos.map((producto, index)=>(
+                                <CardsAdmin key={index} {...producto}>
                                     {/*Cambia el precio de la card */}
                                     <div>
-                                        <button className="btn btn-warning mt-2" onClick={() => cambiarPrecio(producto)}>CAMBIAR PRECIO</button>
+                                        <button className="btn btn-warning mt-2" onClick={() => cambiarPrecio()}>CAMBIAR PRECIO</button>
                                         {cambPrecio ?
                                         <div>
                                             <div className="row m-3">
                                                 <input type="number" className="form-control" placeholder="Nuevo precio" onChange={(e)=>setNewPrecio(e.target.value)}/>
                                             </div>
-                                            <button className="btn btn-warning mt-2" onClick={() => terminarCambio()}>Listo</button>
-                                        </div>
-                                        :
-                                        ''
-                                        }
-                                    </div>
-
-                                    <div>
-                                        <button className="btn btn-warning mt-2" onClick={() => cambiarCosto(producto)}>CAMBIAR COSTO</button>
-                                        {cambCosto ?
-                                        <div>
-                                            <div className="row m-3">
-                                                <input type="number" className="form-control" placeholder="Nuevo Costo" onChange={(e)=>setNewCosto(e.target.value)}/>
-                                            </div>
-                                            <button className="btn btn-warning mt-2" onClick={() => terminarCambio()}>Listo</button>
+                                            <button className="btn btn-warning mt-2" onClick={() => terminarCambio(producto)}>Listo</button>
                                         </div>
                                         :
                                         ''
