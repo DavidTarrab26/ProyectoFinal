@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../../../store/appContext";
 
-
-
 const Promocion = () => {
     const { productos } = useContext(Context)
     const [ ofertas, setOfertas ] = useState([])
@@ -24,7 +22,7 @@ const Promocion = () => {
                 {ofertas.map((oferta, index) => (
                 <div className='col-md-3 my-3' key={index}>
                    <div className=''>
-                       <img src={require(`../../../assets/img/shorts-white-background/${oferta.img}`)} className='fotosPantalon shadow' alt="Imagen pantalon"/>
+                       <img src={require(`../../../assets/img/photo-white-background/${oferta.img}`)} className='fotosPantalon shadow' alt="Imagen pantalon"/>
                        <div className='d-flex justify-content-between'>
                            <div className='textoCards'>
                                <h6 className='mt-2'>{oferta.texto}</h6>
