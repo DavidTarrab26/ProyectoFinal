@@ -10,7 +10,7 @@ const Detalle = () => {
     const [imagen, setImagen ] = useState()
     const [tamanio, setTamanio] = useState()
     const [ tamaños, setTamaños] = useState([])
-    let prodADetallar = {};
+    let prodADetallar = {hola: 'hola'};
     
 
     //Si encuntra un producto con ese id lo devuelve
