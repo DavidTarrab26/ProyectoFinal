@@ -13,9 +13,8 @@ const Carrito = () => {
     return ( 
         <>
         {carrito.length > 0 ?
-        <h1>carrito esta lleno</h1>
 
-        /* <div>
+        <div>
             <div className='d-flex justify-content-center flex-wrap'>
                 {carrito.map((carro, index)=>(
                     <div className='my-3 mx-2 contentCardCarrito' key={index}>
@@ -38,7 +37,7 @@ const Carrito = () => {
             <div className='d-flex justify-content-center mt-2'>
                 <button className='btn btn-warning'>Finalizar Compra</button>
             </div>
-        </div> */
+        </div>
         :
         <h2 className='text-center p-5'>AGREGUE ELEMENTOS AL CARRITO</h2>
         
