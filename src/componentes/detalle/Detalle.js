@@ -31,7 +31,7 @@ const Detalle = () => {
                         }  */}
                     <p>Descripcion del producto:</p>
                     <p>100% cotton</p>
-                    <button className='btn btn-success' onClick={()=>agregarAlCarrito(prodADetallar, prodADetallar.precio)}>Agragar Al Carrito</button>
+                    <button className='btn btn-warning' onClick={()=>agregarAlCarrito(prodADetallar, prodADetallar.precio)}>Agregar al Carrito</button>
                 </div>
                 
             </div>
