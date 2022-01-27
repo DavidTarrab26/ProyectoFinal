@@ -19,29 +19,25 @@ const Promocion = () => {
     return ( 
         <>
         {ofertas.length > 0 ?
-        <div className="container-fluid">
-            <div className="d-flex text-center justify-content-center p-4 border'bot">
-                <h2 className="txt-prin"> OFERTAS </h2>
-            </div>
-            <div className="row">
-                {ofertas.map((oferta, index) => (
-                <div className='col-md-3 my-3' key={index}>
-                   <div className=''>
-                       <img src={require(`../../../assets/img/photo-white-background/${oferta.img}`)} className='fotosPantalon shadow' alt="Imagen pantalon"/>
-                       <div className='d-flex justify-content-between'>
-                           <div className='textoCards'>
-                               <h6 className='mt-2'>{oferta.texto}</h6>
-                               <h6 className='precio'>${oferta.precio}</h6>
-                           </div>
-                           <div className='mt-3'>
+            <div className='container'>
+                <h2 className='text-center mb-5'>PANTALONES</h2>
+                <div className='d-flex justify-content-center flex-wrap'>
+                    {ofertas.map((oferta, index)=>(
+                        <div className='my-3 mx-2 contenedorCardPantalon' key={index}>
+                            <img src={require(`../../../assets/img/photo-white-background/${oferta.img}`)} className='fotosPantalon shadow' alt="Imagen pantalon"/>
+                            <div className='d-flex justify-content-between'>
+                                <div className='textoCards'>
+                                    <h6 className='mt-2'>{oferta.texto}</h6>
+                                    <h6 className='precio'>${oferta.precio}</h6>
+                                </div>
+                                <div className='mt-3'>
                                 <Link to={`/${oferta.id}`}><button className='btn btn-dark btnCards'>Ver mas</button></Link>
+                                </div>
                             </div>
-                       </div>
-                   </div>
-               </div>
-                ))}
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
 
         :
 

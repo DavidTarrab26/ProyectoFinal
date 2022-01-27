@@ -1,19 +1,19 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Context } from '../../store/appContext';
 import './Carrito.css'
-import Swal from "sweetalert2"
 
 const Carrito = () => {
     const {carrito, setCarrito, precios, setPrecios} = useContext(Context)
+    console.log(carrito)
 
     const eliminar = (id, preciomenos) =>{
         setCarrito(carrito.filter(carro=> carro.id != id))
         setPrecios(precios - preciomenos)
-        console.log(precios)
         }
     return ( 
         <>
         {carrito.length > 0 ?
+
         <div>
             <div className='d-flex justify-content-center flex-wrap'>
                 {carrito.map((carro, index)=>(
