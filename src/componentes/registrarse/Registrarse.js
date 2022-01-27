@@ -4,24 +4,20 @@ import "./Registrarse.css"
 import { Context } from '../../store/appContext'
 
 const Registrarse = () => {
-    const {registroOk} = useContext(Context)
+    const {registroOk, usuarios, setUsuarios} = useContext(Context)
     const [ nombre, setNombre ] = useState("")
     const [ apellido, setApellido ] = useState("")
     const [ correo, setCorreo ] = useState("")
     const [ contrasenia, setContrasenia ] = useState("")
-    const [usuario, setUsuario] = useState([])
-    console.log(usuario)
 
-    const guardarUsuario = (e) =>{
-        e.preventDefault()
-        setUsuario([{name: nombre ,surname: apellido, email: correo, pass: contrasenia}, ...usuario])
+    const guardarUsuario = () =>{
+        setUsuarios([{name: nombre ,surname: apellido, email: correo, pass: contrasenia, enLista: true }, ...usuarios])
         registroOk()
     }
     
-    useEffect(()=>{
-        localStorage.setItem('usuario', JSON.stringify(usuario))
-    },[usuario])
-    
+   /* useEffect(()=>{
+        
+    },[usuarios]) */
 
     return ( 
     <div className='formRegis d-flex justify-content-center mt-4'>
@@ -44,7 +40,7 @@ const Registrarse = () => {
                             <input type="password" className="form-control" placeholder="Contraseña" onChange={(e)=>setContrasenia(e.target.value)}/>
                         </div>
                         <div>
-                            <button className="btn botonRegis  mb-4" onClick={(event)=>guardarUsuario(event)}>Registrarse</button>
+                            <button className="btn botonRegis  mb-4" onClick={()=>guardarUsuario()}>Registrarse</button>
                         </div>
                 </div>
             </div>
