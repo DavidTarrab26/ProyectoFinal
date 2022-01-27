@@ -28,6 +28,7 @@ const AppProvider = ({children}) => {
     ])
     const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem('carrito')) ??[])
     const [precios, setPrecios] = useState(0)
+    const [porDesc, setPorDesc] = useState(5)
     
     //estado del registro
     const [registrado, setRegistrado] =useState(false)
@@ -72,7 +73,7 @@ const AppProvider = ({children}) => {
     }
 
     const errorLogin = (email) => {
-        toast.error(`Error alingresar con el email: ${email}`  )
+        toast.error(`Error al ingresar con el email: ${email}`  )
     }
 
     const logeate = () => {
@@ -83,7 +84,7 @@ const AppProvider = ({children}) => {
 
 
     return (
-        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito, precios, registrado, registroOk, noRegistrado, setPrecios, prodAgregado, setRegistrado, usuarios, setUsuarios, bienvenido, errorLogin, logeado, setLogeado, logeate}}>
+        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito, precios, registrado, registroOk, noRegistrado, setPrecios, prodAgregado, setRegistrado, usuarios, setUsuarios, bienvenido, errorLogin, logeado, setLogeado, logeate, porDesc, setPorDesc}}>
             <div><Toaster /></div>
             {children}
         </Context.Provider>

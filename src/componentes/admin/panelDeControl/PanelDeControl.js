@@ -4,12 +4,14 @@ import CardsAdmin from "./cardsAdmin";
 
 
 const PanelDeControl = () => {
-    const { productos, setProductos, prodAgregado} = useContext(Context);
+    const { productos, setProductos, prodAgregado, porDesc, setPorDesc} = useContext(Context);
     const [ agregarProd, setAgregarProd ] = useState(false)
     const [newPrecio, setNewPrecio ] = useState(0)
+    const [ newPorcentaje, setNewPorcentaje ] = useState (0)
     const [cambPrecio, setCambPrecio] = useState(false)
     const [cambCosto, setCambCosto] = useState(false)
     const [ mostrar, setMostrar ] = useState(false)
+    const [ cambiarDesc, setCambiarDesc ] = useState(false)
 
     {/*{id: "1", img: "panta1.png", alt: "Jogger azul", categoria: "Jogger", texto: "Jogger azul", enStock: true, precio: 2500, costo: 1900, promocion: true, talles:["S", "L", "M"], verfoto: false} */}
     //Obtengo todos los datos del producto que voy a agregar
@@ -61,6 +63,15 @@ const PanelDeControl = () => {
             setProductos(productos)
         }
     }
+
+    const cambiarDescuento = () => {
+        setCambiarDesc(true)
+    }
+
+    const terminarModificacion = (porcentaje) => {
+        setPorDesc(porcentaje)
+        setCambiarDesc(false)
+    }
     
     
     return (
@@ -69,6 +80,21 @@ const PanelDeControl = () => {
                 <h1>PANEL DE CONTROL</h1>
             </div>
             <div className="m-4">
+                <div className="m-3"> 
+                {/* Cambia el porcentaje de descuento para los productos en promocion  */}
+                {!cambiarDesc ?
+                  <button className="btn btn-warning p-2" onClick={() => cambiarDescuento()}>MODIFICAR DESCUENTO</button>
+                :
+                <div>
+                    <div className="row m-3">
+                        <input type="number" className="form-control" placeholder="Nuevo porcentaje de descuento" onChange={(e)=>setNewPorcentaje(e.target.value)}/>
+                    </div>
+                    <button className="btn btn-warning mt-2" onClick={() => terminarModificacion(newPorcentaje)}>Listo</button>
+                </div>
+                }
+                </div>
+
+                {/* Agrega productos a la lista de productos */}
                 {!agregarProd ?
                  <button className="btn btn-warning p-2" onClick={() => agregarProducto()}>AGREGAR PRODUCTO</button>
 

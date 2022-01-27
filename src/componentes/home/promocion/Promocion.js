@@ -4,7 +4,7 @@ import './Promocion.css'
 import { Link } from "react-router-dom"
 
 const Promocion = () => {
-    const { productos, setProductos } = useContext(Context)
+    const { productos, setProductos, porDesc } = useContext(Context)
     const [ ofertas, setOfertas ] = useState([])
 
 
@@ -28,7 +28,7 @@ const Promocion = () => {
                             <div className='d-flex justify-content-between'>
                                 <div className='textoCards'>
                                     <h6 className='mt-2'>{oferta.texto}</h6>
-                                    <h6 className='precio'>${oferta.precio}</h6>
+                                    <h6 className='precio'>${oferta.precio - (oferta.precio * porDesc / 100)}</h6>
                                 </div>
                                 <div className='mt-3'>
                                 <Link to={`/${oferta.id}`}><button className='btn btn-dark btnCards'>Ver mas</button></Link>
