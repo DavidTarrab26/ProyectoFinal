@@ -17,13 +17,13 @@ const Navbar = () => {
         <div className="navbar-collapse">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
           <li>
-            <Link to="/"><button className='botonMenu btn responsive'>HOME</button></Link>
+            <Link to="proyectofinal/"><button className='botonMenu btn responsive'>HOME</button></Link>
             </li>
             <li >
-            <Link  to="/pantalones"><button className='botonMenu btn' >PANTALONES</button></Link> 
+            <Link  to="proyectofinal/pantalones"><button className='botonMenu btn' >PANTALONES</button></Link> 
             </li>
             <li >
-              <Link to="/bermudas"><button className='botonMenu btn'> BERMUDAS </button></Link>
+              <Link to="proyectofinal/bermudas"><button className='botonMenu btn'> BERMUDAS </button></Link>
             </li>
           </ul>
             
@@ -44,16 +44,16 @@ const Navbar = () => {
 
           {carrito.length > 0 ?
             <div className='d-flex'>
-              <Link to="/carrito"><i className="bi bi-cart4"></i></Link> 
+              <Link to="proyectofinal/carrito"><i className="bi bi-cart4"></i></Link> 
               <p className='carritoLength'>{carrito.length}</p>
             </div>
           :
-          <Link to="/carrito"><i className="bi bi-cart4"></i></Link>}
+          <Link to="proyectofinal/carrito"><i className="bi bi-cart4"></i></Link>}
         </div>
       :
       <div>
-          <Link to="/Registrarse"><button className='btn btn-regis'> Registrate </button></Link>
-          <Link to="/Login"><button className='btn btn-login'> Login </button></Link>
+          <Link to="proyectofinal/Registrarse"><button className='btn btn-regis'> Registrate </button></Link>
+          <Link to="proyectofinal/Login"><button className='btn btn-login'> Login </button></Link>
       </div>
       }
         

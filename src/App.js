@@ -1,5 +1,5 @@
 import './App.css';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './componentes/navbar/Navbar';
 import Footer from './componentes/footer';
 import Home from './componentes/home';
@@ -22,14 +22,14 @@ function App() {
         <Router>
           <Navbar/>
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/pantalones' element={<Pantalones />} />
-            <Route path='/bermudas' element={<Bermudas />} />
-            <Route path='/admin' element={<Admin />} />
-            <Route path='/registrarse' element={<Registrarse/>} />
-            <Route path='/login' element={<Login/>} />
-            <Route path='/carrito' element={<Carrito />} />
-            <Route path='/:id' element={<Detalle />} />
+            <Route path='proyectofinal/' element={<Home />} />
+            <Route path='proyectofinal/pantalones' element={<Pantalones />} />
+            <Route path='proyectofinal/bermudas' element={<Bermudas />} />
+            <Route path='proyectofinal/admin' element={<Admin />} />
+            <Route path='proyectofinal/registrarse' element={<Registrarse/>} />
+            <Route path='proyectofinal/login' element={<Login/>} />
+            <Route path='proyectofinal/carrito' element={<Carrito />} />
+            <Route path='proyectofinal/:id' element={<Detalle />} />
           </Routes>
           <Footer/>
         </Router>
