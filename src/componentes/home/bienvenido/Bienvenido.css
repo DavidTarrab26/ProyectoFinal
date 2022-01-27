@@ -13,3 +13,10 @@
     border: 10px solid orange;
     border-radius: 15px;
 }
+
+@media (max-Width:480px) {
+    .bienvenido{
+        font-size: 500%;
+        font-weight: bold;
+    } 
+}

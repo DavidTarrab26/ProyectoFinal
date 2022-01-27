@@ -1,38 +1,24 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState, useContext} from 'react';
+import { useState, useContext} from 'react';
 import { Context } from '../../store/appContext'
 import "./Login.css"
 
 
 const Login = () => {
-    const [ usuarios, bienvenido, errorLogin] = useContext(Context)
+    const { usuarios, bienvenido, errorLogin, setLogeado } = useContext(Context)
     const [ logCorreo, setLogCorreo ] = useState("")
     const [ logContrasenia, setLogContrasenia ] = useState("")
-    //const login = parseInt(localStorage.getItem('usuario'))
-    const [entro, setEntro] = useState([])
     let usuBuscado = {};
 
 
-    const validarLogin = (contrasenia, email) => {
+    const validarLogin = (email, contrasenia) => {
         usuBuscado = (usuarios.find(usu => usu.email == email && usu.pass == contrasenia))
         if (usuBuscado != null) {
             bienvenido(usuBuscado.name)
+            setLogeado(true)
         } else {
             errorLogin(email)
         }
     }
-
-        /*const guardarLogin = (e) =>{
-        e.preventDefault()
-        setLogin([{email: logCorreo, pass: logContrasenia}, ...login])}
-
-        useEffect(()=>{
-            localStorage.setItem('login', JSON.stringify(login))
-        },[login])
-        const validacionUser = () =>{
-            setEntro(login.find(log=>logCorreo && logContrasenia === log.email && log.pass))
-        }*/
-    
 
     return ( 
         

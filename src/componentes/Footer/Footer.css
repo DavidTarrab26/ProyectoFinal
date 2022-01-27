@@ -8,3 +8,8 @@
 .contactenos{
     margin-top: 20px !important;
 }
+@media (max-Width: 480px){
+    .textoFooter{
+        font-size: 11px;
+    }
+}
