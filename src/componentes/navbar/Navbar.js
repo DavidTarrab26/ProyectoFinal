@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="navbar-collapse">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li>
-            <Link to="/"><button className='botonMenu btn'>HOME</button></Link>
+            <Link to="/"><button className='botonMenu btn responsive'>HOME</button></Link>
             </li>
             <li >
             <Link  to="/pantalones"><button className='botonMenu btn' >PANTALONES</button></Link> 

@@ -1,14 +1,14 @@
 import { useContext, useState } from 'react';
 import { Context } from '../../store/appContext';
 import './Carrito.css'
+import Swal from "sweetalert2"
 
 const Carrito = () => {
-    const {carrito, setCarrito, precios} = useContext(Context)
+    const {carrito, setCarrito, precios, setPrecios} = useContext(Context)
 
-    const eliminar = (id) =>{
-        setCarrito(carrito.filter(carro => carro.id != id))
-    }
-
+    const eliminar = (id, preciomenos) =>{
+        setCarrito(carrito.filter(carro=> carro.id != id))
+        setPrecios(precios-preciomenos)}
     return ( 
         <>
         {carrito.length > 0 ?
@@ -24,7 +24,7 @@ const Carrito = () => {
                                     <h6 className='precio'>${carro.precio}</h6>
                                 </div>
                                 <div className='mt-3'>
-                                <button className='btn btn-danger' onClick={()=>eliminar(carro.id)}>Eliminar</button>
+                                <button className='btn btn-danger' onClick={()=>eliminar(carro.id, carro.precio)}>Eliminar</button>
                                 </div>
                             </div>
                         </div>
