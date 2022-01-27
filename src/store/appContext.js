@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect} from "react";
-import Swal from "sweetalert2"
+import Swal from "sweetalert"
+import toast, { Toaster } from 'react-hot-toast';
+
 
 export const Context = createContext(null)
 
@@ -43,15 +45,23 @@ const AppProvider = ({children}) => {
     const agregarAlCarrito = (producto, precio) =>{
         setCarrito([producto, ...carrito])
         setPrecios(precio+precios)
-        Swal("Se agrego al carrito ");
-        
-    //funcion del login
+        toast.success("Se agrego a tu carrito")
+    }
 
+   const registrado = () => {
+        toast.success("Su cuenta a sido agrgada")
+    }
+
+    const noRegistrado = () => {
+        toast.error("No se ha podido registrar")
     }
 
 
+
+
     return (
-        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito, precios}}>
+        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito, precios, registrado, noRegistrado, setPrecios}}>
+            <div><Toaster /></div>
             {children}
         </Context.Provider>
     );

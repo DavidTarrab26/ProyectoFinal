@@ -2,9 +2,10 @@ import { useContext, useEffect, useState } from 'react';
 import {Context} from '../../store/appContext'
 import './Pantalones.css'
 import { Link } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast';
 
 const Pantalones = () => {
-    const {productos} = useContext(Context)
+    const {productos, agregarAlCarrito} = useContext(Context)
     const [ pantalones, setPantalones ] = useState([]) 
 
     useEffect (() => {
@@ -28,7 +29,6 @@ const Pantalones = () => {
                                     </div>
                                     <div className='mt-3'>
                                     <Link to={`/${pantalon.id}`}><button className='btn btn-dark btnCards'>Ver mas</button></Link>
-                                    {/* <button onClick={()=>agregarAlCarrito(pantalon, pantalon.precio)}>Agragar Al Carrito</button> */}
                                     </div>
                                 </div>
                             </div>
