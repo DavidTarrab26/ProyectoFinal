@@ -42,8 +42,7 @@ const Login = () => {
                         <h4 className=' tituloLogin mt-5'>INICIA SESION</h4>
                         
                         <div className="mb-5">
-                            <input type="email" className="form-control"  placeholder="correo electronico"onChange={(e)=>setLogCorreo(e.target.value)}/>
-                            
+                            <input type="text" className="form-control"  placeholder="correo electronico" onChange={(e)=>setLogCorreo(e.target.value)}/>
                         </div>
                         <div class="row mb-3">
                             <input type="password" class="form-control" placeholder="Contraseña" onChange={(e)=>setLogContrasenia(e.target.value)}/>
