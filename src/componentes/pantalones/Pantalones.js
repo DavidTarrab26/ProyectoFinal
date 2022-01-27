@@ -2,10 +2,9 @@ import { useContext, useEffect, useState } from 'react';
 import {Context} from '../../store/appContext'
 import './Pantalones.css'
 import { Link } from 'react-router-dom'
-import { Toaster } from 'react-hot-toast';
 
 const Pantalones = () => {
-    const {productos, agregarAlCarrito} = useContext(Context)
+    const {productos} = useContext(Context)
     const [ pantalones, setPantalones ] = useState([]) 
 
     useEffect (() => {

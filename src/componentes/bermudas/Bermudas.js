@@ -2,10 +2,9 @@ import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../store/appContext';
 import './Bermudas.css'
 import { Link } from 'react-router-dom'
-import { Toaster } from 'react-hot-toast';
 
 const Bermudas = () => {
-    const {productos, agregarAlCarrito} = useContext(Context)
+    const {productos} = useContext(Context)
     const [ bermudas, setBermudas ] = useState([]) 
 
     useEffect (() => {

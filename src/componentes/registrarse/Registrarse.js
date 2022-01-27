@@ -1,8 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import "./Registrarse.css"
+import { Context } from '../../store/appContext'
 
 const Registrarse = () => {
+    const {registroOk} = useContext(Context)
     const [ nombre, setNombre ] = useState("")
     const [ apellido, setApellido ] = useState("")
     const [ correo, setCorreo ] = useState("")
@@ -12,10 +14,10 @@ const Registrarse = () => {
 
     const guardarUsuario = (e) =>{
         e.preventDefault()
-        setUsuario([{name: nombre,surname: apellido, email: correo, pass: contrasenia}, ...usuario])
-        
-        
+        setUsuario([{name: nombre ,surname: apellido, email: correo, pass: contrasenia}, ...usuario])
+        registroOk()
     }
+    
     useEffect(()=>{
         localStorage.setItem('usuario', JSON.stringify(usuario))
     },[usuario])

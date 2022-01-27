@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container-fluid">
         <img className='logoNav' src= {foto} alt= "logo"/>
         <div className="navbar-collapse">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
           <li>
             <Link to="/"><button className='botonMenu btn responsive'>HOME</button></Link>
             </li>

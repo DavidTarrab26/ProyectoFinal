@@ -4,20 +4,15 @@ import CardsAdmin from "./cardsAdmin";
 
 
 const PanelDeControl = () => {
-
-
-
-    const { productos, setProductos } = useContext(Context);
+    const { productos, setProductos, prodAgregado} = useContext(Context);
     const [ agregarProd, setAgregarProd ] = useState(false)
     const [newPrecio, setNewPrecio ] = useState(0)
-    const [newCosto, setNewCosto ] = useState(0)
     const [cambPrecio, setCambPrecio] = useState(false)
     const [cambCosto, setCambCosto] = useState(false)
     const [ mostrar, setMostrar ] = useState(false)
 
     {/*{id: "1", img: "panta1.png", alt: "Jogger azul", categoria: "Jogger", texto: "Jogger azul", enStock: true, precio: 2500, costo: 1900, promocion: true, talles:["S", "L", "M"], verfoto: false} */}
     //Obtengo todos los datos del producto que voy a agregar
-    const [ newProducto, setNewProducto ] = useState({})
     const [ aidi, setAidi ] = useState('')
     const [ imagen, setImagen ] = useState('')
     const [ categoria, setCategoria] = useState('')
@@ -28,21 +23,23 @@ const PanelDeControl = () => {
     const [talles, setTalles] = useState([])
     const [verFoto, setVerFoto] = useState(false)
 
-    const agregarProducto = (aidi  /* imagen, categoria, texto, enStock, precio, promocion, talles, verFoto */) => {
-        setNewProducto({'id': aidi})
-        /* if (enStock === "true" ) {
+    const agregarProducto = () => {
+        setAgregarProd(true)
+    }
+
+    const seAgrego = () => {
+        const newProducto = {id: aidi, categoria: categoria, texto: texto, enStock: enStock, precio: precio, promocion: promocion, verFoto: verFoto}
+        if (enStock === "true" ) {
             setEnStock(true)
         } if (promocion === "true") {
             setPromocion(true)
         } if (verFoto === "true") {
             setVerFoto(true)
-        } */
+        }
         setProductos([...productos, newProducto]);
-        setAgregarProd(true)
-    }
-
-    const seAgrego = () => {
         setAgregarProd(false)
+        prodAgregado(texto)
+        
     }
 
     const eliminar = (id) => {
@@ -73,7 +70,7 @@ const PanelDeControl = () => {
             </div>
             <div className="m-4">
                 {!agregarProd ?
-                 <button className="btn btn-warning p-2" onClick={() => agregarProducto(aidi, imagen, categoria, texto, enStock, precio, promocion, talles, verFoto)}>AGREGAR PRODUCTO</button>
+                 <button className="btn btn-warning p-2" onClick={() => agregarProducto()}>AGREGAR PRODUCTO</button>
 
                  :
                 <>
@@ -86,9 +83,9 @@ const PanelDeControl = () => {
                             <div className="col">
                                 <input type="text" className="form-control" placeholder="ID" aria-label="ID" onChange={(e)=>setAidi(e.target.value)}style={{width: "300px"}}/>
                             </div>
-                            <div className="col">
+                            {/* <div className="col">
                                 <input type="text" className="form-control" placeholder="Imagen" aria-label="Imagen" onChange={(e)=>setImagen(e.target.value)} style={{width: "300px"}}/>
-                            </div>
+                            </div> */}
                             <div className="col">
                                 <input type="text" className="form-control" placeholder="Categoria" aria-label="Categoria" onChange={(e)=>setCategoria(e.target.value)} style={{width: "300px"}}/>
                             </div>

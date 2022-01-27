@@ -2,14 +2,14 @@
 
 
 
-const CardsAdmin = ({id, precio, enStock, texto, promocion, img, children}) => {
+const CardsAdmin = ({id, precio, enStock, texto, promocion, img,  children}) => {
     return ( 
-        <div className='col-md-3 m-3 border' style={{height: '20%'}}>
+        <div className='col-md-3 m-3' style={{height: '15%'}}>
             <div className=''>
-                <div className='contenedorFoto'>
+                <div className='contenedorFoto mt-2'>
                     <div className='d-flex'>
                         <div className='textoCards'>
-                            <img  src={require(`../../../../assets/img/photo-white-background/${img}`)} className='fotosPantalon shadow' alt="Imagen producto"/>
+                            {img != null ? <img  src={require(`../../../../assets/img/photo-white-background/${img}`)} className='fotosPantalon shadow' alt="Imagen producto"/> : 'No hay imagen'}
                             <h6 className='mt-2 text-center'>{texto}</h6>
                             <h6 className='mt-2'> ID: {id}</h6>
                             <h6 className='mt-2'> EN STOCK: {enStock} </h6>
