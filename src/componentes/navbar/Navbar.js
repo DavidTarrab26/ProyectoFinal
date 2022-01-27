@@ -7,7 +7,7 @@ import "./Navbar.css"
 
 
 const Navbar = () => {
-  const {carrito} = useContext(Context)
+  const {carrito, logeado} = useContext(Context)
     return ( 
    <>
    {/* navbar */} 
@@ -39,15 +39,22 @@ const Navbar = () => {
     {/* login */}
 
     <div className='login d-flex justify-content-end'>
-      <Link to="/Registrarse"><button className='btn btn-regis'> Registrate </button></Link>
-      <Link to="/Login"><button className='btn btn-login'> Login </button></Link>
-      {carrito.length > 0 ?
-        <div className='d-flex'>
-          <Link to="/carrito"><i className="bi bi-cart4"></i></Link> 
-          <p className='carritoLength'>{carrito.length}</p>
+      {logeado ?
+        <div>
+
+          {carrito.length > 0 ?
+            <div className='d-flex'>
+              <Link to="/carrito"><i className="bi bi-cart4"></i></Link> 
+              <p className='carritoLength'>{carrito.length}</p>
+            </div>
+          :
+          <Link to="/carrito"><i className="bi bi-cart4"></i></Link>}
         </div>
       :
-      <Link to="/carrito"><i className="bi bi-cart4"></i></Link>
+      <div>
+          <Link to="/Registrarse"><button className='btn btn-regis'> Registrate </button></Link>
+          <Link to="/Login"><button className='btn btn-login'> Login </button></Link>
+      </div>
       }
         
     </div>

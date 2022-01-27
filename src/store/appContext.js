@@ -29,8 +29,11 @@ const AppProvider = ({children}) => {
     const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem('carrito')) ??[])
     const [precios, setPrecios] = useState(0)
     
-    //estado del login 
+    //estado del registro
     const [registrado, setRegistrado] =useState(false)
+
+    //estado del login
+    const [logeado, setLogeado] = useState(false)
 
     //Lista de usuarios
     const [usuarios, setUsuarios] = useState([
@@ -76,7 +79,7 @@ const AppProvider = ({children}) => {
 
 
     return (
-        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito, precios, registrado, registroOk, noRegistrado, setPrecios, prodAgregado, setRegistrado, usuarios, setUsuarios, bienvenido, errorLogin}}>
+        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito, precios, registrado, registroOk, noRegistrado, setPrecios, prodAgregado, setRegistrado, usuarios, setUsuarios, bienvenido, errorLogin, logeado, setLogeado}}>
             <div><Toaster /></div>
             {children}
         </Context.Provider>

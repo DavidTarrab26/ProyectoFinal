@@ -5,7 +5,7 @@ import './Detalle.css'
 
 const Detalle = () => {
     const { id } = useParams();
-    const {productos, agregarAlCarrito} = useContext(Context)
+    const {productos, agregarAlCarrito, logeado} = useContext(Context)
     const [prodADetallar, setProdADetallar ] = useState({})
     const [ tamanios, setTamanios] = useState([])
     
