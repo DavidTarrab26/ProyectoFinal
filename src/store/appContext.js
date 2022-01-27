@@ -75,11 +75,15 @@ const AppProvider = ({children}) => {
         toast.error(`Error alingresar con el email: ${email}`  )
     }
 
+    const logeate = () => {
+        toast.error(`Para poder agregar al carrito necesita logearse primero`  )
+    }
+
 
 
 
     return (
-        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito, precios, registrado, registroOk, noRegistrado, setPrecios, prodAgregado, setRegistrado, usuarios, setUsuarios, bienvenido, errorLogin, logeado, setLogeado}}>
+        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito, precios, registrado, registroOk, noRegistrado, setPrecios, prodAgregado, setRegistrado, usuarios, setUsuarios, bienvenido, errorLogin, logeado, setLogeado, logeate}}>
             <div><Toaster /></div>
             {children}
         </Context.Provider>
