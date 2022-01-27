@@ -10,6 +10,7 @@ const Carrito = () => {
         setCarrito(carrito.filter(carro=> carro.id != id))
         setPrecios(precios - preciomenos)
         }
+        
     return ( 
         <>
         {carrito.length > 0 ?
