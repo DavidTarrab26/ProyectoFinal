@@ -33,7 +33,7 @@ const Admin = () => {
                     <label className="form-label">Contraseña</label>
                     <input type="password" className="form-control" id="exampleInputPassword1" value={inputContrasenia}onChange={(e)=>setInputContrasenia(e.target.value)} />
                 </div>
-                <button className="btn btn-primary mx-3" onClick={(event)=>validacionAdmin(event)}>ENTRAR</button>
+                <button className="btn btn-primary mx-3" onClick={(event)=>validacionAdmin(event)}>Entrar</button>
             </form>
             </div>
         :
@@ -50,7 +50,7 @@ const Admin = () => {
                     <label className="form-label">Contraseña</label>
                     <input type="password" className="form-control" id="exampleInputPassword1"  onChange={(e)=>setInputContrasenia(e.target.value)} />
                 </div>
-                <button className="btn btn-primary mx-3" onClick={(event)=>validacionAdmin(event)}>Submit</button>
+                <button className="btn btn-primary mx-3" onClick={(event)=>validacionAdmin(event)}>Entrar</button>
                 <div className='text-center p-2 '>
                     <h5>Datos incorrectos, por favor intente otra vez</h5>
                 </div>

@@ -15,7 +15,6 @@ const Bermudas = () => {
     
     return ( 
         <div>
-            
             {bermudas.length > 0 ?
                 <div className='container'>
                     <h2 className='text-center mb-5 mt-3 txt'>BERMUDAS</h2>
@@ -32,7 +31,7 @@ const Bermudas = () => {
                                                     <h6 className='precio'>${bermuda.precio}</h6>
                                                 </div>
                                                 <div className='mt-3'>
-                                                <Link to={`/${bermuda.id}`}><button className='btn btn-dark btnCards' onClick={()=>agregarAlCarrito({...bermuda}, bermuda.precio)}>Ver mas</button></Link>
+                                                <Link to={`/${bermuda.id}`}><button className='btn btn-dark btnCards'>Ver mas</button></Link>
                                                 </div>
                                             </div>
                                         </div>

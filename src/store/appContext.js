@@ -55,7 +55,7 @@ const AppProvider = ({children}) => {
 
 
     return (
-        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito, precios, registrado, noRegistrado}}>
+        <Context.Provider value={{productos, setProductos, carrito, setCarrito, agregarAlCarrito, precios, registrado, noRegistrado, setPrecios}}>
             <div><Toaster /></div>
             {children}
         </Context.Provider>

@@ -18,6 +18,8 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: orange;
     color: black;
     margin: 5px;
+    width: 110px;
+    align-items: center;
 }
 
 .btn-login{
