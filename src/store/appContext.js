@@ -27,6 +27,11 @@ const AppProvider = ({children}) => {
     ])
     const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem('carrito')) ??[])
     const [precios, setPrecios] = useState(0)
+    
+    //estado del login 
+    const[registrado, setRegistrado]=useState(false)
+
+    
     //Agrega a la lista de pantalones los pantalones
     //En cada componente poner un filter, segun el titulo
 
@@ -39,6 +44,9 @@ const AppProvider = ({children}) => {
         setCarrito([producto, ...carrito])
         setPrecios(precio+precios)
         Swal("Se agrego al carrito ");
+        
+    //funcion del login
+
     }
 
 
