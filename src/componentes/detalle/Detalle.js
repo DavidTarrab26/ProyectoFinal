@@ -9,10 +9,12 @@ const Detalle = () => {
     const [ prodADetallar, setProdADetallar] = useState({});
     const {talles} = prodADetallar
     console.log(talles)
+    
 
     //Si encuntra un producto con ese id lo devuelve
    useEffect(()=>{
         setProdADetallar(productos.find((produc) => produc.id == id))
+        console.log(prodADetallar)
    },[])
 
     return (

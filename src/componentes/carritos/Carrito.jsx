@@ -7,7 +7,9 @@ const Carrito = () => {
 
     const eliminar = (id, preciomenos) =>{
         setCarrito(carrito.filter(carro=> carro.id != id))
-        setPrecios(precios-preciomenos)}
+        setPrecios(precios - preciomenos)
+        console.log(precios)
+        }
     return ( 
         <>
         {carrito.length > 0 ?

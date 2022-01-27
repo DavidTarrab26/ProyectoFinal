@@ -30,7 +30,7 @@ const Bermudas = () => {
                                                     <h6 className='precio'>${bermuda.precio}</h6>
                                                 </div>
                                                 <div className='mt-3'>
-                                                <Link to={`/${bermuda.id}`}><button className='btn btn-dark btnCards' onClick={()=>agregarAlCarrito({...bermuda})}>Ver mas</button></Link>
+                                                <Link to={`/${bermuda.id}`}><button className='btn btn-dark btnCards'>Ver mas</button></Link>
                                                 </div>
                                             </div>
                                         </div>
