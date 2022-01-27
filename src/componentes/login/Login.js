@@ -10,15 +10,15 @@ const Login = () => {
                 <div className='col-6'>
                         <h4 className=' tituloLogin mt-5'>INICIA SESION</h4>
                         
-                        <div className="form-floating mb-5">
-                            <input type="email" className="form-control"  placeholder="name@example.com"/>
-                            <label>Correo electronico</label>
+                        <div className="mb-5">
+                            <input type="email" className="form-control"  placeholder="correo electronico"/>
+                            
                         </div>
                         <div class="row mb-3">
                             <input type="password" class="form-control" placeholder="Contraseña"/>
                         </div>
                         <div>
-                            <button className="btn botonRegis mb-4" type="submit">ENVIAR</button>
+                            <button className="btn botonRegis mb-4" type="submit">Entrar</button>
                         </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import './Bienvenido.css'
 const Bienvenido = () => {
     return ( 
         <div className="container-fluid" style={{height: "500px"}} >
-            <div className="borde" style={{marginTop: "4%"}}>
+            <div className=" borde" style={{marginTop: "4%"}}>
                 <div className="d-flex text-center justify-content-center pt-2">
                     <h1 className="bienvenido">THE TROUSER</h1>
                 </div>
