@@ -34,7 +34,6 @@ const Login = () => {
                         <h4 className=' tituloLogin mt-5'>INICIA SESION</h4>
                         <div className="mb-5">
                             <input type="text" className="form-control"  placeholder="correo electronico" onChange={(e)=>setLogCorreo(e.target.value)}/>
-                            
                         </div>
                         <div className="row mb-3">
                             <input type="password" className="form-control" placeholder="Contraseña" onChange={(e)=>setLogContrasenia(e.target.value)}/>
