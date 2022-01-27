@@ -1,7 +1,6 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Context } from '../../store/appContext';
 import './Carrito.css'
-import Swal from "sweetalert2"
 
 const Carrito = () => {
     const {carrito, setCarrito, precios, setPrecios} = useContext(Context)

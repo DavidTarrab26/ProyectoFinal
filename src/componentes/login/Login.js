@@ -37,7 +37,7 @@ const Login = () => {
                             <input type="password" class="form-control" placeholder="Contraseña" onChange={(e)=>setLogContrasenia(e.target.value)}/>
                         </div>
                         <div>
-                            <button className="btn botonRegis mb-4" onClick={(event)=>guardarLogin(event)}> Entrar</button>
+                            <button className="btn botonRegis mb-4"/*  onClick={(event)=>guardarLogin(event)} */> Entrar</button>
                         </div>
                 </div>
             </div>
