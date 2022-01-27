@@ -1,0 +1,17 @@
+@media (max-Width: 960px) {
+    .formMapa{
+        display: none;
+    }
+}
+@media (max-Width: 480px) {
+    .formMapa{
+        display: none;
+    }
+    .seguinos{
+        font-size: 40px;
+        margin-right: 5px;
+    }
+    .logo{
+        width: 60px;
+    }
+}

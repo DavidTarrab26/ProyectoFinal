@@ -9,3 +9,12 @@
     margin-top: 10%;
     margin-left: 50px;
 }
+@media (max-width: 480px) {
+    .fotosPantalonDetalle{
+        width: 300px;
+        height: 400px;
+    }
+    .contenedorDetalle{
+        height: 800px;
+    }
+}

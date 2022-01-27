@@ -2,3 +2,8 @@
     font-size: 75px;
     border-bottom: 2px solid orange;
 }
+@media (max-Width: 960px) {
+    .txt-prin{
+        margin-top: 100px;
+    }
+}

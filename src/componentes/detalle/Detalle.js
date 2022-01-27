@@ -21,8 +21,8 @@ const Detalle = () => {
     return (
         <>
         {prodADetallar != null ?
-            <div className='d-flex justify-content-center contenedorDetalle'>
-                {/*<img src={require(`../../assets/img/photo-white-background/${prodADetallar.img}`)} className='fotosPantalonDetalle shadow' alt="Imagen pantalon"/>*/}
+            <div className='d-flex justify-content-center contenedorDetalle flex-wrap'>
+                <img src={require(`../../assets/img/photo-white-background/panta1.png`)} className='fotosPantalonDetalle shadow' alt="Imagen pantalon"/>
                 <div className='textoDetalle'>
                     <h2>{prodADetallar.texto}</h2>
                     <h2 style={{color: "red"}}>${prodADetallar.precio}</h2>
