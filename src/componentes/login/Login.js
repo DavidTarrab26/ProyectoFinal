@@ -8,8 +8,6 @@ const Login = () => {
     const { usuarios, bienvenido, errorLogin, setLogeado } = useContext(Context)
     const [ logCorreo, setLogCorreo ] = useState("")
     const [ logContrasenia, setLogContrasenia ] = useState("")
-    //const login = parseInt(localStorage.getItem('usuario'))
-    const [entro, setEntro] = useState([])
     let usuBuscado = {};
  
 

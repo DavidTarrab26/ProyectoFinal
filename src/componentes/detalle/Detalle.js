@@ -5,14 +5,16 @@ import './Detalle.css'
 
 const Detalle = () => {
     const { id } = useParams();
-    const {productos, agregarAlCarrito, logeado} = useContext(Context)
+    const {productos, agregarAlCarrito, logeado, logeate} = useContext(Context)
     const [prodADetallar, setProdADetallar ] = useState({})
     
 
     //Si encuntra un producto con ese id lo devuelve
    useEffect(()=>{
         setProdADetallar((productos.find((produc) => produc.id == id)))
-        console.log(prodADetallar.talles)
+        if (!logeado){
+            logeate()
+        }
    },[])
  
 
@@ -35,8 +37,8 @@ const Detalle = () => {
                     <p>100% cotton</p>
                     <p>Ideal para el verano!!</p>
                     <p>Made in Argentina</p>
-                    <button className='btn btn-warning' onClick={()=>agregarAlCarrito(prodADetallar, prodADetallar.precio)}>Agregar al Carrito</button>
-                </div>
+                    <button className='btn btn-warning' disabled={!logeado} onClick={()=>agregarAlCarrito(prodADetallar, prodADetallar.precio)}>Agregar al Carrito</button>
+                 </div>
                 
             </div> 
             
