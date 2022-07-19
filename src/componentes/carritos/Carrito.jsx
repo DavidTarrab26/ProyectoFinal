@@ -6,7 +6,6 @@ import swal from 'sweetalert'
 const Carrito = () => {
     const {carrito, setCarrito, precios, setPrecios} = useContext(Context)
     const [ finalizado, setFinalizado] = useState(false);
-    console.log(carrito)
 
     const eliminar = (id, preciomenos) =>{
         setCarrito(carrito.filter(carro=> carro.id != id))

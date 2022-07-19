@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './componentes/navbar/Navbar';
+import Navbar from './componentes/navbar';
 import Footer from './componentes/footer';
 import Home from './componentes/home';
 import AppProvider from './store/appContext';
-import Pantalones from './componentes/pantalones/Pantalones';
+import Pantalones from './componentes/pantalones';
 import Bermudas from './componentes/bermudas'
 import Admin from './componentes/admin/Admin';
 import Detalle from './componentes/detalle';
@@ -29,7 +29,7 @@ function App() {
             <Route path='proyectofinal/registrarse' element={<Registrarse/>} />
             <Route path='proyectofinal/login' element={<Login/>} />
             <Route path='proyectofinal/carrito' element={<Carrito />} />
-            <Route path='proyectofinal/:id' element={<Detalle />} />
+            <Route path='/:id' element={<Detalle />} />
           </Routes>
           <Footer/>
         </Router>
